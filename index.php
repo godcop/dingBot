@@ -2,7 +2,7 @@
 <html>
   <head lang="en">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Dingtalk Robot WebHook Example</title>
+  <title>DingBot消息推送系统</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -53,8 +53,8 @@ $('div#spots').append(
 <body>
 <div class="header">
   <div class="am-g">
-    <h1>钉钉机器人 WebHook 示例</h1>
-    <p>Worked by Charlie.Pan(AYUMI Team)</p>
+    <h1>DingBot消息推送系统</h1>
+    <p>Worked by Godcop</p>
   </div>
   <hr>
 </div>
@@ -62,7 +62,6 @@ $('div#spots').append(
   <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
     <h3>发送消息</h3>
     <hr>
-    <br>
     <?php 
     if ($_GET['r']=='success') {
         echo '<p class="am-alert am-alert-success">推送成功！快去群里看看吧。</p>';
@@ -82,13 +81,14 @@ $('div#spots').append(
       <label for="urls">WebHook Token：</label>
       https://oapi.dingtalk.com/robot/send?access_token=
       <input type="text" name="urls" id="urls" value="<?php echo $_COOKIE["Lasteseturl"];?>" required="true"/>
-      <br>
+	  <br>
       <label for="type1">消息类型：
       <br />
       <select name="type1" id="type1" data-am-selected>
       <option value="text">text</option>
       <option value="link">link</option>
       <option value="markdown">markdown</option>
+	  <option value="actionCard">actionCard</option>
       </select>
       </label>
       <br>
@@ -128,7 +128,7 @@ $('div#spots').append(
       </div>
     </form>
     <hr>
-    <p>© 2017 Charlie.Pan|钉钉机器人 WebHook 示例V1.0<br/>仅供团队开发测试使用</p>
+    <p>© 2017 Charlie.Pan|钉钉机器人消息推送系统<br/>DingBot V1.0(Beta)</p>
   </div>
 </div>
 </body>

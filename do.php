@@ -29,6 +29,8 @@ if (($timestampBase-$timestamp)>300 || $token!=$tokenBase) {
         $data = array('msgtype' => 'link','link' => array('text' => $messages,'title' => $titles,'picUrl' =>$picUrl ,'messageUrl' => $messageUrl,),);
     } elseif ($type1 == "markdown") {
         $data = array('msgtype' => 'markdown','markdown' => array('title' => $titles,'text' => $messages,),);
+	} elseif ($type1 == "actionCard") {
+        $data = array('msgtype' => 'actionCard','actionCard' => array('title' => $titles,'text' => $messages,'hideAvatar' => '1','btnOrientation' => '0',),);
     } else {
         header("Location: index.php?r=illgal");
     }
