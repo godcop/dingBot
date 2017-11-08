@@ -30,7 +30,8 @@ if (($timestampBase-$timestamp)>300 || $token!=$tokenBase) {
     } elseif ($type1 == "markdown") {
         $data = array('msgtype' => 'markdown','markdown' => array('title' => $titles,'text' => $messages,),);
 	} elseif ($type1 == "actionCard") {
-        $data = array('msgtype' => 'actionCard','actionCard' => array('title' => $titles,'text' => $messages,'hideAvatar' => '1','btnOrientation' => '0',),);
+        //$data = array('msgtype' => 'actionCard','actionCard' => array('title' => $titles,'text' => $messages,'hideAvatar' => '1','btnOrientation' => '0','btns' => array(array('title' => '确定','actionURL' => 'http://www.baidu.com',),),),);
+		$data = array('msgtype' => 'actionCard','actionCard' => array('title' => $titles,'text' => $messages,'hideAvatar' => '1','btnOrientation' => '0',),);
     } else {
         header("Location: index.php?r=illgal");
     }

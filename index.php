@@ -47,6 +47,10 @@ $('div#spots').append(
     .header p {
       font-size: 14px;
     }
+	.tips {
+		font-size:12px;
+		font-weight:normal;
+	}
   </style>
 </head>
 
@@ -78,11 +82,10 @@ $('div#spots').append(
     $token= md5($pass.$timestamp.$random);
     ?>
     <form method="post" class="am-form" action="do.php?t=<?php echo $timestamp ?>&r=<?php echo $random ?>&token=<?php echo $token ?>">
-      <label for="urls">WebHook Token：</label>
-      https://oapi.dingtalk.com/robot/send?access_token=
+      <label for="urls">WebHook Token<div class="tips">https://oapi.dingtalk.com/robot/send?access_token=</div></label>
       <input type="text" name="urls" id="urls" value="<?php echo $_COOKIE["Lasteseturl"];?>" required="true"/>
 	  <br>
-      <label for="type1">消息类型：
+      <label for="type1">消息类型
       <br />
       <select name="type1" id="type1" data-am-selected>
       <option value="text">text</option>
@@ -92,19 +95,20 @@ $('div#spots').append(
       </select>
       </label>
       <br>
-      <label for="messages">消息内容:</label>
+	  <br>
+      <label for="messages">消息内容<div class="tips">所有消息类型必填，【markdown】/【actionCard】支持markdown语法</div></label>
       <textarea name="messages" id="messages" required="true" rows=5></textarea>
       <br>
-      <label for="titles">消息标题(当且仅当【link】/【markdown】有效且必填，【text】无效无需填写)</label>
+      <label for="titles">消息标题<div class="tips">当且仅当【link】/【markdown】/【actionCard】有效且必填，【text】无效无需填写</div></label>
       <input type="text" name="titles" id="titles"/>
       <br>
-      <label for="messageUrl">点击消息跳转的URL：（当且仅当【link】有效且必填）</label>
+      <label for="messageUrl">点击消息跳转的URL<div class="tips">当且仅当【link】有效且必填</div></label>
       <input type="text" name="messageUrl" id="messageUrl" />
       <br>
-      <label for="picUrl">图片URL：（当且仅当【link】有效但选填）</label>
+      <label for="picUrl">图片URL<div class="tips">当且仅当【link】有效但选填</div></label>
       <input type="text" name="picUrl" id="picUrl" />
       <br>
-      <label for="spots">被@人的手机号：（当且仅当【text】有效但选填，没有请留空）</label>
+      <label for="spots">被@人的手机号<div class="tips">当且仅当【text】有效但选填，没有请留空</div></label>
       <div id="spots">
       <div class="am-input-group">
       <input type="text" name="atMobile[]" class="am-form-field"/>
@@ -114,8 +118,7 @@ $('div#spots').append(
       </div>
     </div>
       <br>
-      <label for="isAtAll">AT群内全员？（当且仅当【text】有效）
-      <br />
+      <label for="isAtAll">AT群内全员？<div class="tips">当且仅当【text】有效</div>
       <select name="isAtAll" id="isAtAll" data-am-selected>
       <option value="false">否</option>
       <option value="true">是</option>
@@ -128,7 +131,7 @@ $('div#spots').append(
       </div>
     </form>
     <hr>
-    <p>© 2017 Charlie.Pan|钉钉机器人消息推送系统<br/>DingBot V1.0(Beta)</p>
+    <p style="text-align:center;">© 2017 Charlie.Pan | 钉钉机器人消息推送系统<br/>DingBot V1.0（Beta）</p>
   </div>
 </div>
 </body>
